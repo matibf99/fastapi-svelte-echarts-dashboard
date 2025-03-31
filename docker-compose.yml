@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data.json:/data/data.json
+    environment:
+      - DATA_FILE_PATH=/data/data.json
+    restart: unless-stopped
